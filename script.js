@@ -5,27 +5,30 @@ fetch("https://api.pexels.com/v1/search?query=cane", { //passiamo a URL un ogget
     "content-type": "application/json"
   }
 })
-
+//finale
 .then((response) => {
-    response.json().then((pluto) => {
+     response.json().then((pluto) => {
         pluto.photos.forEach(element => {
             var container = document.querySelector("#prova");
-            container.innerHTML += `
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <img src="${element.src.original}" class="card-img-top" alt="Image">
-                        <div class="card-body">
-                            <p class="card-text">Descrizione dell'immagine</p>
-                        </div>
-                    </div>
-                </div>
+             container.innerHTML += `
+                 <div class="col-md-4 mb-4">
+                   <div class="card">
+                       <img src="${element.src.original}" class="card-img-top" alt="Image">
+                                                <div class="card-body">
+                             <p class="card-text">Descrizione dell'immagine</p>
+                         </div>
+                     </div>
+                 </div>
             `;
-        });
-    });
-})
-.catch((error) => {
-    console.error('Error fetching photos:', error);
-});
+         });
+     });
+ })
+ .catch((error) => {
+     console.error('Error fetching photos:', error);
+ });
+//fine finale 
+
+
 // .then((response) => {
 //     response.json().then((pluto)=>{
 //         pluto.photos.forEach(element => {
@@ -33,8 +36,16 @@ fetch("https://api.pexels.com/v1/search?query=cane", { //passiamo a URL un ogget
 //             var container = document.querySelector("#prova")
 //             container.innerHTML += "<div><img src='" + element.src.original + "' alt=''></div>" 
            
-//         });
-//     })
-// })
+//          });
+//      })
+//  })
+
+//  .then((response) => {
+//     return response.json()
+//     console.log(response)
+//  })
+//  .then ((pluto) => {
+//     console.log(pluto)
+//  })
 
 
